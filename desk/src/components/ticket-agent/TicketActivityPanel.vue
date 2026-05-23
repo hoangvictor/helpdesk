@@ -6,8 +6,9 @@
     class="[&_[role='tab']]:px-0 [&_[role='tablist']]:px-5 [&_[role='tablist']]:gap-7.5 [&_[role='tablist']]:flex-shrink-0 [&_[role='tabpanel'][data-state='active']]:flex-1"
   >
     <template #tab-panel="{ tab }">
+      <AgentConversation v-if="tab.name === 'agent_conversation'" />
       <TicketAgentActivities
-        v-if="Boolean(activities.data)"
+        v-else-if="Boolean(activities.data)"
         ref="ticketAgentActivitiesRef"
         :activities="filterActivities(tab.name as TicketTab)"
         :title="tab.label"
@@ -48,6 +49,7 @@
 </template>
 
 <script setup lang="ts">
+import AgentConversation from "@/components/ticket-agent/AgentConversation.vue";
 import CommunicationArea from "@/components/CommunicationArea.vue";
 import {
   ActivityIcon,
@@ -55,6 +57,7 @@ import {
   EmailIcon,
   PhoneIcon,
 } from "@/components/icons";
+import LucideBot from "~icons/lucide/bot";
 import { useActiveTabManager } from "@/composables/useActiveTabManager";
 import { useTelephonyStore } from "@/stores/telephony";
 import {
@@ -97,6 +100,11 @@ const tabs: ComputedRef<TabObject[]> = computed(() => {
       name: "comment",
       label: "Comments",
       icon: CommentIcon,
+    },
+    {
+      name: "agent_conversation",
+      label: "Agent Conversation",
+      icon: LucideBot,
     },
   ];
 

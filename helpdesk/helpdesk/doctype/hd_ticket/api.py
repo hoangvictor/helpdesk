@@ -37,6 +37,7 @@ def new(
     possible_solution: str,
     customer_phone_number: str | int,
     conversation_id: str=None,
+    user_id: str=None,
     location: str=None,
     event_time: str=None,
     attachments: list[dict] = []
@@ -53,6 +54,7 @@ def new(
             "event_time": event_time,
             "customer_phone_number": str(customer_phone_number),
             "conversation_id": conversation_id,
+            "user_id": user_id
         }
 
         d = frappe.get_doc(doc).insert()

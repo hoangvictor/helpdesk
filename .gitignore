@@ -9,6 +9,7 @@ __pycache__/
 tags
 node_modules
 .vscode
+.env
 
 # Distribution / packaging
 .Python

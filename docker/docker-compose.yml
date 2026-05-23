@@ -26,6 +26,7 @@ services:
       - REDIS_CACHE=redis://:difyai123456@redis:6379/0
       - REDIS_QUEUE=redis://:difyai123456@redis:6379/1
       - REDIS_SOCKETIO=redis://:difyai123456@redis:6379/2
+      - AGENT_API_KEY=${AGENT_API_KEY}
     working_dir: /home/frappe
     volumes:
       - .:/workspace

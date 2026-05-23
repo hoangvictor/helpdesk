@@ -24,6 +24,7 @@
   "location",
   "event_time",
   "conversation_id",
+  "user_id",
   "template",
   "key",
   "sla_tab",
@@ -183,6 +184,11 @@
     "fieldname": "conversation_id",
     "fieldtype": "Data",
     "label": "Conversation ID"
+  },
+  {
+    "fieldname": "user_id",
+    "fieldtype": "Data",
+    "label": "User ID"
   },
   {
    "fieldname": "template",
