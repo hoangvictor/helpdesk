@@ -20,6 +20,10 @@
   "summary",
   "sb_details",
   "description",
+  "possible_solution",
+  "location",
+  "event_time",
+  "conversation_id",
   "template",
   "key",
   "sla_tab",
@@ -57,6 +61,7 @@
   "contact",
   "customer",
   "email_account",
+  "customer_phone_number",
   "column_break_16",
   "via_customer_portal",
   "attachment",
@@ -156,6 +161,28 @@
    "label": "Description",
    "oldfieldname": "problem_description",
    "oldfieldtype": "Text"
+  },
+  {
+   "bold": 1,
+   "fieldname": "possible_solution",
+   "fieldtype": "Text Editor",
+   "in_global_search": 1,
+   "label": "Possible Solution"
+  },
+  {
+    "fieldname": "location",
+    "fieldtype": "Data",
+    "label": "Location"
+  },
+  {
+    "fieldname": "event_time",
+    "fieldtype": "Data",
+    "label": "Event Time"
+  },
+  {
+    "fieldname": "conversation_id",
+    "fieldtype": "Data",
+    "label": "Conversation ID"
   },
   {
    "fieldname": "template",
@@ -338,6 +365,13 @@
    "fieldtype": "Link",
    "label": "Email Account",
    "options": "Email Account"
+  },
+  {
+    "fieldname": "customer_phone_number",
+    "fieldtype": "Data",
+    "label": "Customer Phone Number",
+    "options": "Phone",
+    "reqd": 1
   },
   {
    "fieldname": "column_break_16",
@@ -545,7 +579,7 @@
  "quick_entry": 1,
  "recipient_account_field": "email_account",
  "row_format": "Dynamic",
- "search_fields": "status,subject,raised_by",
+ "search_fields": "status,subject,raised_by,customer_phone_number",
  "sender_field": "raised_by",
  "show_title_field_in_link": 1,
  "sort_field": "modified",

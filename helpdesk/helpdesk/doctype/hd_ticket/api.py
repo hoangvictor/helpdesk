@@ -1,5 +1,6 @@
 import json
 from datetime import timedelta
+import traceback
 
 import frappe
 from bs4 import BeautifulSoup
@@ -30,13 +31,39 @@ from helpdesk.utils import (
 
 
 @frappe.whitelist()
-# flake8: noqa
-def new(doc: dict, attachments: list[dict] = []):
-    doc["doctype"] = "HD Ticket"
-    doc["via_customer_portal"] = bool(frappe.session.user)
-    doc["attachments"] = attachments
-    d = frappe.get_doc(doc).insert()
-    return d
+def new(
+    subject: str,
+    description: str,
+    possible_solution: str,
+    customer_phone_number: str | int,
+    conversation_id: str=None,
+    location: str=None,
+    event_time: str=None,
+    attachments: list[dict] = []
+):
+    try:
+        doc = {
+            "doctype": "HD Ticket",
+            "via_customer_portal": bool(frappe.session.user),
+            "attachments": attachments,
+            "subject": subject,
+            "description": description,
+            "possible_solution": possible_solution,
+            "location": location,
+            "event_time": event_time,
+            "customer_phone_number": str(customer_phone_number),
+            "conversation_id": conversation_id,
+        }
+
+        d = frappe.get_doc(doc).insert()
+        return d
+
+    except Exception:
+        frappe.log_error(
+            title="HD Ticket Creation Failed",
+            message=traceback.format_exc()
+        )
+        raise
 
 
 @frappe.whitelist()
@@ -442,7 +469,7 @@ def duplicate_list_retain_timestamp(doctype, activities: list, target: str, cont
             },
             update_modified=False,
         )
-
+    
 
 @frappe.whitelist()
 @agent_only

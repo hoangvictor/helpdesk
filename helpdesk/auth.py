@@ -68,7 +68,6 @@ WILDCARD_PATHS = [
     "/api/method/frappe.integrations.oauth2_logins.custom",
 ]
 
-
 def authenticate():
     if not frappe.conf.get("block_endpoints"):
         return

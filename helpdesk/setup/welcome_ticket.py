@@ -80,6 +80,7 @@ def create_ticket():
     d.raised_by = AUTHOR_EMAIl
     d.contact = AUTHOR_NAME
     d.via_customer_portal = True
+    d.customer_phone_number = "1234567890"
     d.insert()
     add_assign(
         {

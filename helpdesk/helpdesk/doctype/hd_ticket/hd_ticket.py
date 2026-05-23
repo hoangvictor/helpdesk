@@ -1028,6 +1028,18 @@ class HDTicket(Document):
                 "width": "8rem",
             },
             {
+                "label": "Location",
+                "type": "Data",
+                "key": "location",
+                "width": "8rem",
+            },
+            {
+                "label": "Event Time",
+                "type": "Datetime",
+                "key": "event_time",
+                "width": "8rem",
+            },
+            {
                 "label": "Assigned To",
                 "type": "MultipleAvatar",
                 "key": "_assign",
@@ -1121,6 +1133,18 @@ class HDTicket(Document):
                 "width": "8rem",
             },
             {
+                "label": "Location",
+                "type": "Data",
+                "key": "location",
+                "width": "8rem",
+            },
+            {
+                "label": "Event Time",
+                "type": "Data",
+                "key": "event_time",
+                "width": "8rem",
+            },
+            {
                 "label": "Team",
                 "type": "Link",
                 "options": "HD Team",
@@ -1146,6 +1170,8 @@ class HDTicket(Document):
             "agreement_status",
             "response_by",
             "resolution_by",
+            "location",
+            "event_time",
             "customer",
             "first_responded_on",
             "modified",

@@ -14,16 +14,16 @@ cd frappe-bench
 
 # Use containers instead of localhost
 bench set-mariadb-host mariadb
-bench set-redis-cache-host redis://redis:6379
-bench set-redis-queue-host redis://redis:6379
-bench set-redis-socketio-host redis://redis:6379
+bench set-redis-cache-host redis://:difyai123456@redis:6379/10
+bench set-redis-queue-host redis://:difyai123456@redis:6379/11
+bench set-redis-socketio-host redis://:difyai123456@redis:6379/12
 
 # Remove redis, watch from Procfile
 sed -i '/redis/d' ./Procfile
 sed -i '/watch/d' ./Procfile
 
 bench get-app telephony
-bench get-app helpdesk --branch main
+bench get-app helpdesk https://github.com/hoangvictor/helpdesk --branch feat/administrative-ticket-management
 
 bench new-site helpdesk.localhost \
 --force \
