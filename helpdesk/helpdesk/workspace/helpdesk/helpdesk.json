@@ -157,7 +157,7 @@
 	"name": "Helpdesk",
 	"owner": "Administrator",
 	"parent_page": "",
-	"public": 1,
+	"public": 0,
 	"quick_lists": [],
 	"roles": [],
 	"sequence_id": 1,

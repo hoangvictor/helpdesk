@@ -376,8 +376,7 @@
     "fieldname": "customer_phone_number",
     "fieldtype": "Data",
     "label": "Customer Phone Number",
-    "options": "Phone",
-    "reqd": 1
+    "options": "Phone"
   },
   {
    "fieldname": "column_break_16",

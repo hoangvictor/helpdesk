@@ -23,21 +23,21 @@ export const agentPortalSidebarOptions = [
     icon: LucideTicket,
     to: "TicketsAgent",
   },
-  {
-    label: __("Knowledge Base"),
-    icon: LucideBookOpen,
-    to: "AgentKnowledgeBase",
-  },
-  {
-    label: "Customers",
-    icon: OrganizationsIcon,
-    to: "CustomerList",
-  },
-  {
-    label: __("Contacts"),
-    icon: LucideContact2,
-    to: "ContactList",
-  },
+  // {
+  //   label: __("Knowledge Base"),
+  //   icon: LucideBookOpen,
+  //   to: "AgentKnowledgeBase",
+  // },
+  // {
+  //   label: "Customers",
+  //   icon: OrganizationsIcon,
+  //   to: "CustomerList",
+  // },
+  // {
+  //   label: __("Contacts"),
+  //   icon: LucideContact2,
+  //   to: "ContactList",
+  // },
   {
     label: __("Call Logs"),
     icon: PhoneIcon,
@@ -51,9 +51,9 @@ export const customerPortalSidebarOptions = [
     icon: LucideTicket,
     to: "TicketsCustomer",
   },
-  {
-    label: __("Knowledge Base"),
-    icon: LucideBookOpen,
-    to: "CustomerKnowledgeBase",
-  },
+  // {
+  //   label: __("Knowledge Base"),
+  //   icon: LucideBookOpen,
+  //   to: "CustomerKnowledgeBase",
+  // },
 ];
